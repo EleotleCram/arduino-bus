@@ -31,7 +31,7 @@ brightness to actual output RGB value.
 
 #include "debug.h"
 #include "loop.h"
-#include "../ABus.h"
+#include <abus/ABus.h>
 #include "rgbled.h"
 
 #include <math.h>

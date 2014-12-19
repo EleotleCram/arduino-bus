@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../ABus.h"
+#include <abus/ABus.h>
 
 typedef enum {
 	MSG_RGBLED_ON = ABUS_MSG_BASE(RGBLED),

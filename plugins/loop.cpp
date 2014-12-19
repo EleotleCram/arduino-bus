@@ -2,7 +2,7 @@
 
 #include "loop.h"
 #include "debug.h"
-#include "../ABus.h"
+#include <abus/ABus.h>
 
 void init_plugin_loop() {}
 

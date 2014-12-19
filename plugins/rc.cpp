@@ -3,7 +3,7 @@
 #include "debug.h"
 #include "rc.h"
 
-#include "../ABus.h"
+#include <abus/ABus.h>
 
 #include <IRLib.h>
 

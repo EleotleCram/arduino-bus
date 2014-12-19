@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../ABus.h"
+#include <abus/ABus.h>
 
 typedef enum {
 	MSG_RC_CODE = ABUS_MSG_BASE(RC),
