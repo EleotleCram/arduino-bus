@@ -35,15 +35,7 @@ brightness to actual output RGB value.
 #include <abus/ABus.h>
 #include "rgbled.h"
 
-// #include MCU_HEADER(x)   =>   #include "x_<MCU>.h"
-#define MCU_HEADER(x) STR(JOIN_TOKENS(x,_,MCU.h))
-// Token pasting magic (two-level macro is to allow for dereferencing since
-// the # and ## operators will not dereference):
-#define STR_(x) #x
-#define STR(x) STR_(x)
-#define JOIN_TOKENS(x,y,z) JOIN_TOKENS_(x,y,z)
-#define JOIN_TOKENS_(x,y,z) x ## y ## z
-
+#include <plugins.h>
 #include MCU_HEADER(rgbled)
 
 #include <math.h>
