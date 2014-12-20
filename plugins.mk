@@ -26,4 +26,4 @@ space :=
 space +=
 plugins.h: plugins/ Makefile
 	echo "$${plugins_h_static_contents}\\n\\n" >$@
-	echo >>$@ "#define PLUGINS \\\\\n\\t$(subst $(space), \\\\\n\\t,$(strip $(patsubst %,X(%),$(PLUGINS))))"
+	echo >>$@ "#define PLUGINS \\\\\n\\t$(subst $(space), \\\\\n\\t,$(strip $(patsubst %,PLUGIN(%),$(PLUGINS))))"
