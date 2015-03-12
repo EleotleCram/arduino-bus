@@ -1,3 +1,4 @@
+MAKEFILE_DIR=$(dir $(lastword $(MAKEFILE_LIST)))
 
 # extra sources can be found in the plugins/ folder
 SOURCES := $(wildcard $(addprefix plugins/, *.c *.cc *.cpp *.C))
@@ -5,8 +6,8 @@ SOURCES := $(wildcard $(addprefix plugins/, *.c *.cc *.cpp *.C))
 # plugin magic
 PLUGINS := $(notdir $(basename $(wildcard $(addprefix plugins/, *.c *.cc *.cpp *.C))))
 PLUGIN_MSG_BASES := $(shell echo "$(PLUGINS)" | tr " " "\n" | tr "a-z" "A-Z" | awk '{print "-DMSG_BASE_"$$1"="(FNR-1)*100}')
-CPPFLAGS += $(PLUGIN_MSG_BASES)
-CFLAGS += $(PLUGIN_MSG_BASES)
+CPPFLAGS += $(PLUGIN_MSG_BASES) -I $(MAKEFILE_DIR)/plugins
+CFLAGS += $(PLUGIN_MSG_BASES) -I $(MAKEFILE_DIR)/plugins
 
 define plugins_h_static_contents
 // #include MCU_HEADER(x)   =>   #include "x_<MCU>.h"
